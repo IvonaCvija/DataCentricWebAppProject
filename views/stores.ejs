@@ -1,0 +1,41 @@
+<body>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+    </style>
+    <div>
+        <h1>Stores</h1>
+        <a href="/">Home</a>
+
+        <table>
+            <tr>
+                <th>SID</th>
+                <th>Location</th>
+                <th>Manager ID</th>
+            </tr>
+            <% stores.forEach((store)=>
+                { %>
+                <tr>
+                    <td>
+                        <%= store.sid %>
+                    </td>
+                    <td>
+                        <%= store.location %>
+                    </td>
+                    <td>
+                        <%= store.mgrid %>
+                    </td>
+                    <td><a href="/stores/editStore/<%= store.sid %>">Update</a></td>
+                </tr>
+                <% }) %>
+        </table>
+        <a href="/addStore">Add Store</a>
+    </div>
+</body>

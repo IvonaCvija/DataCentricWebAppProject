@@ -1,0 +1,29 @@
+<body>
+    <h1>Edit STORE</h1>
+
+    <% if (errors !=undefined) { %>
+
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+
+        </ul>
+
+        <% } %>
+
+            <form action="/stores/editStore/<%= store.sid %>" method="POST">
+                <label>Store ID</label>
+                <input type="text" name="sid" value="<%= store.sid %>" readonly><br>
+                <label>Location</label>
+                <input type="text" name="location" value="<%= store.location %>"><br>
+                <label>Manager ID</label>
+                <input type="text" name="mgrid" value="<%= store.mgrid %>"><br>
+                <input type="submit" value="Update">
+            </form>
+
+            <a href="/stores">Back</a>
+
+</body>

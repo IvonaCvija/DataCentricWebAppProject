@@ -1,0 +1,26 @@
+<body>
+    <h1>Add STORE</h1>
+
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+            <form action="/addStore" method="POST">
+                <label>Store ID:</label>
+                <input type="text" name="sid"><br>
+                <label>Location</label>
+                <input type="text" name="location"><br>
+                <label>Manager ID</label>
+                <input type="text" name="mgrid"><br>
+                <input type="submit" value="ADD STORE">
+            </form>
+
+            <a href="/stores">Back</a>
+
+</body>
