@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
+//getting stores from store table
 app.get('/stores', (req, res) => {
     console.log("Running /stores...")
 
@@ -26,6 +27,7 @@ app.get('/stores', (req, res) => {
         })
 })
 
+//getting products from product table
 app.get('/products', (req, res) => {
     console.log("Running /products...")
 

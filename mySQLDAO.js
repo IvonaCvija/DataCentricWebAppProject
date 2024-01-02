@@ -86,7 +86,7 @@ var updateStore = function (location, mgrid, sid) {
     });
 }
 
-// Get store by SID
+//get store by SID
 var getStoreBySid = function (sid) {
     return new Promise((resolve, reject) => {
         pool.query('SELECT * FROM store WHERE sid = ?', [sid])
@@ -99,6 +99,7 @@ var getStoreBySid = function (sid) {
     });
 }
 
+//delete product if it´s not sold anywhere
 var deleteProduct = function (pid) {
     console.log(pid)
 

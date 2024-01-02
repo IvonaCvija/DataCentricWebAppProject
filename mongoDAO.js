@@ -2,6 +2,7 @@ const MongoClient = require('mongodb').MongoClient
 
 var coll;
 
+//connect to proj2023MongoDB database, collection managers
 MongoClient.connect('mongodb://127.0.0.1:27017')
 
     .then((client) => {
@@ -12,6 +13,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017')
         console.log("Error " + error.message)
     })
 
+//get all managers from database(MongoDB)
 var findAllManagers = function () {
     return new Promise((resolve, reject) => {
 
@@ -30,6 +32,7 @@ var findAllManagers = function () {
     })
 }
 
+//add manager to database(MongoDB)
 var addManager = function (manager) {
     return new Promise((resolve, reject) => {
 
